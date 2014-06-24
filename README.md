@@ -14,3 +14,5 @@ The player wins if they successfully answer both questions.
 If the player loses they must take a drink.
 
 Since each card played remains on the table face-up the Player's is able to use deductive reasoning of cards played and increase their chances of winning until the deck runs out. 
+
+![](HighlowRB.png)
