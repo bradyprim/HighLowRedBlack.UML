@@ -1,0 +1,95 @@
+<script>
+
+function Card() {
+	this.color; 
+	this.value;
+}
+
+function Deck() {
+	this.cards = []
+	this.init = function () {
+		//color 0 = red
+		//color 1 = black
+		for (color = 0; color < 2; color++) {
+			//cards 0-26
+        	for (value = 0; value < 26; value++) {
+        		//value modified to have 0-13 each twice
+          		var value = r % 13;
+
+
+          	}
+        }
+	}
+	this.pullRandomCard = function() {
+		//var randomIndex = ...
+		var theCard = this.cards.splice(randomIndex, 1)[0]
+		return theCard
+	}
+}
+
+function Player(maxAlcohol) {
+	this.shotToPassOut = maxAlcohol;
+	this.shotsTaken = 0;
+	this.takeShot = function() {
+		this.shotsTaken = this.shotsTaken+1
+	}
+	this.isPassedOut = function() {
+		return shotsTaken >= shotToPassOut
+	}
+
+}
+
+this.discard = new Deck();
+
+    this.randomCard = function (deck)
+    {
+      var randSelect, randCard;
+      randSelect = Math.floor(Math.random() * (deck.count() - 1));
+      randCard = deck.cards[randSelect];
+      deck.cards.splice(randSelect, 1);
+      this.discard.cards.push(randCard);
+      return randCard;
+ 
+ var playAgain, rightTimes, wrongTimes, firstCard, nextCard, guess;
+
+
+      playAgain = "no";
+      rightTimes = 0;
+      wrongTimes = 0;
+
+      firstCard = this.randomCard(deck);
+
+      do {
+        nextCard = this.randomCard(deck);
+        guess = prompt("The first card is " + firstCard.show() + ". Do you think the next card will be higher or lower? (Type 'h' or 'l').");
+        guess = this.thisOrThat(guess, "h", "l");
+
+        if (this.highCard(nextCard, firstCard) == guess)
+        {
+          alert("The next card is " + nextCard.show() + ". You were right!");
+          rightTimes++;
+        }
+        else
+        {
+          alert("The next card is " + nextCard.show() + ". You were wrong!");
+          wrongTimes++;
+        }
+        if (deck.count() == 0) 
+        {
+          this.discard.shuffle();
+          deck = this.discard;
+          this.discard = [];
+        }
+        playAgain = prompt("Continue? (Type 'y' or 'n'.)");
+        playAgain = this.thisOrThat(playAgain, "y", "n");
+        firstCard = nextCard;
+      } while (playAgain == "y");
+
+      alert("Thanks for playing! You guessed right " + rightTimes + " time(s), and you guessed wrong " + wrongTimes + " time(s).");
+    }
+  }
+
+</script>
+
+
+
